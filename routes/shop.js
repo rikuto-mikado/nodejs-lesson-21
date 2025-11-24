@@ -7,9 +7,10 @@ const adminData = require('./admin');
 
 const router = express.Router();
 
+// Using res.render() to render Pug templates instead of res.sendFile()
+// The template file is located at views/shop.pug
 router.get('/', (req, res, next) => {
-  console.log('shop.js', adminData.products);
-  res.sendFile(path.join(rootDir, 'views', 'shop.html'));
+  res.render('shop');
 });
 
 module.exports = router;
